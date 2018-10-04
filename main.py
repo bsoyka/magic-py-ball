@@ -22,4 +22,6 @@ answers = [
     "Very doubtful."
 ]
 question = input("Enter a question: ")
-print(random.choice(answers))
+rand = random
+rand.seed(question)
+print(rand.choice(answers))
