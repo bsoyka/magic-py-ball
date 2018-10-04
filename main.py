@@ -21,7 +21,10 @@ answers = [
     "Outlook not so good.",
     "Very doubtful."
 ]
-question = input("Enter a question: ")
+try:
+    question = input("Enter a question: ")
+except NameError:
+    question = raw_input("Enter a question: ")
 rand = random
 rand.seed(question)
 print(rand.choice(answers))
