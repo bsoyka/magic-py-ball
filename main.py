@@ -25,10 +25,9 @@ def main():
     try:
         question = input("Enter a question: ")
     except NameError:
-        question = raw_input("Enter a question: ")
-    rand = random
-    rand.seed(question)
-    return rand.choice(answers)
+        question = raw_input("Enter a question: ") 
+    random.seed(question)
+    return random.choice(answers)
 
 
 if __name__ == "__main__":
