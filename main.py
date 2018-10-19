@@ -25,8 +25,7 @@ def main():
     try:
         question = input("Enter a question: ")
     except NameError:
-        question = raw_input("Enter a question: ")
-    # Removed the extra variable rand as it was not needed
+        question = raw_input("Enter a question: ") 
     random.seed(question)
     return random.choice(answers)
 
