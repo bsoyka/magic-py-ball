@@ -27,9 +27,10 @@ def answer(question):
     random.seed(question)
     return random.choice(answers)
 
-try:
-    question = input("Enter a question: ")
-except NameError:
-	question = raw_input("Enter a question: ")
+if __name__ == "__main__":
+    try:
+        question = input("Enter a question: ")
+    except NameError:
+        question = raw_input("Enter a question: ")
 
-print(answer(question))
+    print(answer(question))
