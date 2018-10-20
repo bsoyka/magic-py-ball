@@ -1,5 +1,6 @@
 import random
-def main():
+
+def answer(question):
     answers = [
         "It is certain.",
         "It is decidedly so.",
@@ -22,13 +23,13 @@ def main():
         "Outlook not so good.",
         "Very doubtful."
     ]
-    try:
-        question = input("Enter a question: ")
-    except NameError:
-        question = raw_input("Enter a question: ") 
+ 
     random.seed(question)
     return random.choice(answers)
 
+try:
+    question = input("Enter a question: ")
+except NameError:
+	question = raw_input("Enter a question: ")
 
-if __name__ == "__main__":
-    print(main())
+print(answer(question))
