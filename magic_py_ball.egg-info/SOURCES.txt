@@ -1,0 +1,8 @@
+README.md
+setup.py
+magic_py_ball/__init__.py
+magic_py_ball.egg-info/PKG-INFO
+magic_py_ball.egg-info/SOURCES.txt
+magic_py_ball.egg-info/dependency_links.txt
+magic_py_ball.egg-info/not-zip-safe
+magic_py_ball.egg-info/top_level.txt
