@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='magic_py_ball',
-      version='2.0',
+      version='2.1.0',
       description='A magic 8 ball made entirely with Python.',
       url='http://github.com/bsoyka/magic-py-ball',
       author='Benjamin Soyka',
