@@ -29,4 +29,4 @@ def answer(question):
 
 
 if __name__ == "__main__":
-    print(main(input("QUESTION: ")))
+    print(answer(input("QUESTION: ")))
