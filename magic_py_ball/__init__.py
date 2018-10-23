@@ -1,4 +1,6 @@
 import random
+import sentry_sdk
+sentry_sdk.init("https://8e577dc11e2743b4bb2581da3bbcc5a9@sentry.io/1307203")
 def answer(question):
     answers = [
         "It is certain.",
