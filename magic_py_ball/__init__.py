@@ -1,7 +1,16 @@
 import random
 import sentry_sdk
+
 sentry_sdk.init("https://8e577dc11e2743b4bb2581da3bbcc5a9@sentry.io/1307203")
-def answer(question):
+
+
+def answer(question, printable=False):
+    """Simulates a magic 8 ball answer to a user's question.
+
+    Keyword arguments:
+    question -- a question made by the user
+    printable -- prints answer when True, returns it otherwise (default: False)
+    """
     answers = [
         "It is certain.",
         "It is decidedly so.",
@@ -24,9 +33,15 @@ def answer(question):
         "Outlook not so good.",
         "Very doubtful."
     ]
+
     random.seed(question)
-    return random.choice(answers)
+    answer = random.choice(answers)
+
+    if not printable:
+        return answer
+
+    print(answer)
 
 
 if __name__ == "__main__":
-    print(answer(input("QUESTION: ")))
+    answer(input("QUESTION: "), printable=True)
