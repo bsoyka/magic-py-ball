@@ -43,7 +43,17 @@ def answer(question, printable=False):
     ]
 
     random.seed(question)
+    sentry_sdk.add_breadcrumb(
+        category = "input",
+        message = "Question: {}".format(question),
+        level = "info"
+    )
     answer = random.choice(answers)
+    sentry_sdk.add_breadcrumb(
+        category = "output",
+        message = "Answer: {}".format(answer),
+        level = "info"
+    )
 
     if not printable:
         return answer
