@@ -2,6 +2,14 @@ import random
 import sentry_sdk
 
 sentry_sdk.init("https://8e577dc11e2743b4bb2581da3bbcc5a9@sentry.io/1307203")
+try:
+    user_ip = requests.get("https://api.ipify.org")
+except:
+    pass
+with sentry_sdk.configure_scope() as scope:
+    scope.user = {"ip_address": user_ip}
+    scope.set_tag("page_locale", "en-us")
+    scope.level = "debug"
 
 
 def answer(question, printable=False):
@@ -35,7 +43,17 @@ def answer(question, printable=False):
     ]
 
     random.seed(question)
+    sentry_sdk.add_breadcrumb(
+        category = "input",
+        message = "Question: {}".format(question),
+        level = "info"
+    )
     answer = random.choice(answers)
+    sentry_sdk.add_breadcrumb(
+        category = "output",
+        message = "Answer: {}".format(answer),
+        level = "info"
+    )
 
     if not printable:
         return answer
