@@ -8,4 +8,4 @@ Install:
 python setup.py install  
   
 run:
- __init__.pl
+ __init__.py
