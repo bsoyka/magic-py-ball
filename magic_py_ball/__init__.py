@@ -9,6 +9,7 @@ except:
 with sentry_sdk.configure_scope() as scope:
     scope.user = {"ip_address": user_ip}
     scope.set_tag("page_locale", "en-us")
+    scope.level = "debug"
 
 
 def answer(question, printable=False):
