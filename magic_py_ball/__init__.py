@@ -2,6 +2,12 @@ import random
 import sentry_sdk
 
 sentry_sdk.init("https://8e577dc11e2743b4bb2581da3bbcc5a9@sentry.io/1307203")
+try:
+    user_ip = requests.get("https://api.ipify.org")
+except:
+    pass
+with sentry_sdk.configure_scope() as scope:
+    scope.user = {"ip_address": user_ip}
 
 
 def answer(question, printable=False):
