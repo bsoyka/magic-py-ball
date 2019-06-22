@@ -1,9 +1,14 @@
-def answer(question, printable=False):
-    """Simulates a magic 8 ball answer to a user's question.
+import random
 
-    Keyword arguments:
-    question -- a question made by the user
-    printable -- prints answer when True, returns it otherwise (default: False)
+def answer(question, printable=False, seeded=True):
+    """Returns a magic 8 ball answer to a user's question.
+
+    Arguments
+    ---------
+    question: str
+        The question made by the user. Used as seed for random
+    printable: bool
+        Outputs answer when True, returns it otherwise (default: False)
     """
     answers = [
         "It is certain.",
@@ -28,11 +33,15 @@ def answer(question, printable=False):
         "Very doubtful."
     ]
 
-    random.seed(question)
+    if seeded:
+        random.seed(question)
+
     answer = random.choice(answers)
 
-    print(answer)
-
+    if printable:
+        print(answer)
+    
+    return answer
 
 if __name__ == "__main__":
     answer(input("QUESTION: "), printable=True)
