@@ -9,6 +9,8 @@ def answer(question, printable=False, seeded=True):
         The question made by the user. Used as seed for random
     printable: bool
         Outputs answer when True, returns it otherwise (default: False)
+    seeded: bool
+        Boolean if it should always seed the question to always return same value (default: True)
     """
     answers = [
         "It is certain.",
