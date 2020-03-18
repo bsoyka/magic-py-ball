@@ -40,6 +40,11 @@ def answer(question, printable=False):
         "My sources say no.",
         "Outlook not so good.",
         "Very doubtful."
+        "Certainly no.",
+        "Gods say yes.",
+        "Gods say no."
+        "No one knows.",
+        "I don't think so."
     ]
 
     random.seed(question)
