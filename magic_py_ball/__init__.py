@@ -39,10 +39,10 @@ def answer(question, printable=False):
         "My reply is no.",
         "My sources say no.",
         "Outlook not so good.",
-        "Very doubtful."
+        "Very doubtful.",
         "Certainly no.",
         "Gods say yes.",
-        "Gods say no."
+        "Gods say no.",
         "No one knows.",
         "I don't think so."
     ]
